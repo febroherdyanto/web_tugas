@@ -10,6 +10,10 @@
 <h2>TI.20.B.1<h2>
 <h3>Teknik Informatika - Universitas Pelita Bangsa<h3></center>
 
+<hr>
+Nama : Febro Herdyanto <br>
+
+
 </body>
 
 <html>
