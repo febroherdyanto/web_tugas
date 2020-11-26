@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 15, 2020 at 05:48 PM
--- Server version: 10.3.25-MariaDB-0+deb10u1
--- PHP Version: 7.3.19-1~deb10u1
+-- Host: localhost
+-- Generation Time: Nov 26, 2020 at 02:53 PM
+-- Server version: 8.0.18
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,7 +32,16 @@ CREATE TABLE `kelas` (
   `id_kelas` int(10) NOT NULL,
   `nama_kelas` varchar(20) NOT NULL,
   `dpa` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `dpa`) VALUES
+(1, 'TI.20.B.1', 'Yoga Religia SKOM'),
+(2, 'b2', 'ejoll'),
+(3, 'b3', 'febro herdy');
 
 -- --------------------------------------------------------
 
@@ -46,7 +57,7 @@ CREATE TABLE `mahasiswa` (
   `email` varchar(5) NOT NULL,
   `kode_mahasiswa` varchar(10) NOT NULL,
   `id_kelas` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -59,7 +70,7 @@ CREATE TABLE `matkul` (
   `kode_matkul` varchar(20) NOT NULL,
   `nama_matkul` varchar(255) NOT NULL,
   `dosen` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -75,7 +86,7 @@ CREATE TABLE `pengumpulan` (
   `path` varchar(255) NOT NULL,
   `nama_file` varchar(255) NOT NULL,
   `keterangan_pengumpulan` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -90,7 +101,7 @@ CREATE TABLE `tugas` (
   `nama_tugas` varchar(255) NOT NULL,
   `keterangan_tugas` longtext NOT NULL,
   `tgl_berakhir` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -106,7 +117,7 @@ CREATE TABLE `xuser` (
   `status` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `xuser`
@@ -170,32 +181,38 @@ ALTER TABLE `xuser`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id_mahasiswa` int(10) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `matkul`
 --
 ALTER TABLE `matkul`
   MODIFY `id_matkul` int(10) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `pengumpulan`
 --
 ALTER TABLE `pengumpulan`
   MODIFY `id_collect` int(10) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `tugas`
 --
 ALTER TABLE `tugas`
   MODIFY `id_tugas` int(10) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `xuser`
 --
 ALTER TABLE `xuser`
   MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- Constraints for dumped tables
 --
@@ -219,6 +236,7 @@ ALTER TABLE `pengumpulan`
 ALTER TABLE `tugas`
   ADD CONSTRAINT `tugas_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `tugas_ibfk_2` FOREIGN KEY (`id_matkul`) REFERENCES `matkul` (`id_matkul`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
