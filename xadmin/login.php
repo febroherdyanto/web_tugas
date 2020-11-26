@@ -1,12 +1,22 @@
+<?php
+    if (isset($_GET['pesan'])) {
+        echo $_GET['pesan'];
+	}
+
+
+	session_start();
+    if(!isset($_SESSION['id_user'])){
+       
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat Login Dengan PHP dan MySQL | MalasNgoding.com</title>	
+	<title>Login Page</title>	
 </head>
 <body>
-	<h1>Membuat Login Dengan PHP dan MySQL</h1>
-	<h3>Halaman Login Sederhana</h3>
-	<form action="login.php" method="post">		
+	<h1>Welcome to Login Page</h1>
+	<form action="" method="post">		
 		<table>
 			<tr>
 				<td>Username</td>
@@ -31,16 +41,28 @@ include '../xconfig/xconfig.php';
 
 if(isset($_POST['login'])){
 
-$username=$_POST['username'];
-$password=md5($_POST['password']);
+	$username=$_POST['username'];
+	$password=md5($_POST['password']);
 
-$qlog=mysqli_query($koneksi,"select * from xuser where username='$username' and password='$password'");
-$cek=mysqli_num_rows($qlog);
+	$qlog=mysqli_query($koneksi,"select id_user,nama_user,status,username,password from xuser where username='$username' and password='$password'");
 
-if($cek==0){
-	echo "LOGIN BERHASIL";
-}else{
-	echo "USER TIDAK ADA";
-}
+	if(mysqli_num_rows($qlog)==1){
+		while($data=mysqli_fetch_array($qlog)){
+				session_start();
+				$_SESSION['id_user']=$data['id_user'];
+				$_SESSION['nama_user']=$data['nama_user'];
+				$_SESSION['status']=$data['status'];
+				header('location:index.php?page=Utama');
+		}
+	}else{
+		header('location:login.php?pesan=Maaf Username atau Password salah');
+	}
+
 }
 ?>
+
+<?php
+
+	}else{
+		header('location:index.php');
+	}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9593d202-4f42-431e-a844-df2640965278" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tugas_upb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xadmin/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/xadmin/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xconfig/xconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/xconfig/xconfig.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kKGuh1tsXjAXIXyQP662qh8Off" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/PELITA BANGSA - FEBRO HERDYANTO/AKTIFITAS PERKULIAHAN/MPUT002 - Bahasa Pemrograman/Pertemuan 9/Tugas/p9_praktikum4" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9593d202-4f42-431e-a844-df2640965278" name="Default Changelist" comment="" />
+      <created>1605442094916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605442094916</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1605442119946">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1605442119946" />
+    <state x="526" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605621379258">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="526" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1605621379258" />
+    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1605673379308">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1605673379308" />
+  </component>
+</project>
