@@ -4,7 +4,8 @@
     <input type="text" name="id_matkul" hidden>
     Kode Mata Kuliah : <input type="text" name="kode_matkul"><br>
     Nama Mata Kuliah : <input type="text" name="nama_matkul"><br>
-    Dosen Mata Kuliah : <input type="text" name="dosen"><br>
+    Dosen Mata Kuliah: <input type="text" name="dosen"><br>
+    <input type="button" ... value="CANCEL" onclick="history.back();" />
     <input type="submit" name="simpan" value="SAVE">
 </form>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 26, 2020 at 02:53 PM
+-- Generation Time: Nov 29, 2020 at 02:07 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kelas` (
   `id_kelas` int(10) NOT NULL,
-  `nama_kelas` varchar(20) NOT NULL,
-  `dpa` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nama_kelas` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dpa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `kelas`
@@ -52,12 +52,12 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `dpa`) VALUES
 CREATE TABLE `mahasiswa` (
   `id_mahasiswa` int(10) NOT NULL,
   `NIM` int(9) NOT NULL,
-  `nama_mahasiswa` varchar(255) NOT NULL,
-  `hp` varchar(15) NOT NULL,
-  `email` varchar(5) NOT NULL,
-  `kode_mahasiswa` varchar(10) NOT NULL,
+  `nama_mahasiswa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hp` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_mahasiswa` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_kelas` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -67,10 +67,18 @@ CREATE TABLE `mahasiswa` (
 
 CREATE TABLE `matkul` (
   `id_matkul` int(10) NOT NULL,
-  `kode_matkul` varchar(20) NOT NULL,
-  `nama_matkul` varchar(255) NOT NULL,
-  `dosen` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `kode_matkul` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_matkul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dosen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `matkul`
+--
+
+INSERT INTO `matkul` (`id_matkul`, `kode_matkul`, `nama_matkul`, `dosen`) VALUES
+(1, 'MPU-122', 'Fisika1', 'Dosen Febro'),
+(2, 'kode2', 'apaja', 'dosen kita');
 
 -- --------------------------------------------------------
 
@@ -83,10 +91,10 @@ CREATE TABLE `pengumpulan` (
   `tgl_pengumulan` date NOT NULL,
   `id_mahasiswa` int(10) NOT NULL,
   `id_tugas` int(10) NOT NULL,
-  `path` varchar(255) NOT NULL,
-  `nama_file` varchar(255) NOT NULL,
-  `keterangan_pengumpulan` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keterangan_pengumpulan` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -98,10 +106,10 @@ CREATE TABLE `tugas` (
   `id_tugas` int(10) NOT NULL,
   `id_kelas` int(10) NOT NULL,
   `id_matkul` int(10) NOT NULL,
-  `nama_tugas` varchar(255) NOT NULL,
-  `keterangan_tugas` longtext NOT NULL,
+  `nama_tugas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keterangan_tugas` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl_berakhir` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -111,13 +119,13 @@ CREATE TABLE `tugas` (
 
 CREATE TABLE `xuser` (
   `id_user` int(10) NOT NULL,
-  `nama_user` varchar(255) NOT NULL,
-  `no_hp` varchar(20) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nama_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `xuser`
@@ -193,7 +201,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `matkul`
 --
 ALTER TABLE `matkul`
-  MODIFY `id_matkul` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_matkul` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pengumpulan`
